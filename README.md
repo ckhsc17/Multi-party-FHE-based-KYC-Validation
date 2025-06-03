@@ -3,6 +3,8 @@
 A quick start guide of this project can be referred here:
 https://docs.zama.ai/concrete/get-started/quick_start
 
+
+
 ## Developing logs
 ## 5/28
 v1.0.0 Old structure using concrete.ml.crypto

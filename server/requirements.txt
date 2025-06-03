@@ -1,0 +1,5 @@
+fastapi
+uvicorn[standard]
+concrete-ml==1.9.0
+concrete-ml-extensions==0.1.9
+numpy
