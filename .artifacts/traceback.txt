@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/bowen/Multi-party-FHE-based-KYC-Validation/venv/lib/python3.9/site-packages/concrete/fhe/compilation/module_compiler.py", line 437, in compile
+    output = FheModule(
+  File "/Users/bowen/Multi-party-FHE-based-KYC-Validation/venv/lib/python3.9/site-packages/concrete/fhe/compilation/module.py", line 764, in __init__
+    self.execution_runtime.init()
+  File "/Users/bowen/Multi-party-FHE-based-KYC-Validation/venv/lib/python3.9/site-packages/concrete/fhe/compilation/utils.py", line 58, in init
+    self._val = self._init()
+  File "/Users/bowen/Multi-party-FHE-based-KYC-Validation/venv/lib/python3.9/site-packages/concrete/fhe/compilation/module.py", line 742, in init_execution
+    execution_server = Server.create(
+  File "/Users/bowen/Multi-party-FHE-based-KYC-Validation/venv/lib/python3.9/site-packages/concrete/fhe/compilation/server.py", line 221, in create
+    library = compiler.compile(
+RuntimeError: Can't emit artifacts: Command failed:ld -dylib -undefined dynamic_lookup -L /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -lSystem -o /var/folders/sq/x0_w9dcx625bd8prh013vwjh0000gn/T/tmp3eqhpmh8/sharedlib.dylib /var/folders/sq/x0_w9dcx625bd8prh013vwjh0000gn/T/tmp3eqhpmh8/program.module-0.mlir.o -lConcretelangRuntime -L/Users/bowen/Multi-party-FHE-based-KYC-Validation/venv/lib/python3.9/site-packages/concrete/.dylibs -rpath /Users/bowen/Multi-party-FHE-based-KYC-Validation/venv/lib/python3.9/site-packages/concrete/.dylibs 2>&1
+Code:256
+ld: warning: search path '/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib' not found
+ld: library 'System' not found
+

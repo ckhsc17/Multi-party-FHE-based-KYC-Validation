@@ -1,0 +1,3 @@
+@fhe.compiler({"x": "encrypted", "y": "encrypted"})
+def is_equal(x, y):
+    return x == y

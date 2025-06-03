@@ -1,0 +1,4 @@
+%0 = x                    # EncryptedTensor<uint14, shape=(1,)>        ∈ [12345, 12345]
+%1 = y                    # EncryptedTensor<uint16, shape=(1,)>        ∈ [54321, 54321]
+%2 = equal(%0, %1)        # EncryptedTensor<uint1, shape=(1,)>         ∈ [0, 0]
+return %2

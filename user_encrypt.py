@@ -1,16 +1,17 @@
-from concrete.ml.crypto import EncryptionClient
+# user_encrypt.py
 import hashlib
+import numpy as np
+from concrete.ml.sklearn import LogisticRegression
 
-# 模擬使用者輸入個資後做 hash
+# 模擬使用者輸入
 uid_raw = "Alice_19900101_0912345678"
 uid_hash = int(hashlib.sha256(uid_raw.encode()).hexdigest(), 16) % (2**16)
+X = np.array([[uid_hash]])
 
-# 載入金鑰加密
-client = EncryptionClient.load("client.zip")
-enc_uid = client.encrypt(uid_hash)
+# 載入已編譯模型
+model = LogisticRegression.load("fhe_model")
 
-# 儲存密文
-with open("enc_uid.bin", "wb") as f:
-    f.write(enc_uid.serialize())
+# FHE 預測（會自動加密推論再解密）
+y_pred = model.predict(X, execute_in_fhe=True)
 
-print(f"✅ 使用者密文 UID 已儲存（hash={uid_hash}）")
+print(f"✅ UID 加密預測完成，使用者風險等級為: {y_pred[0]}（由 hash={uid_hash} 對應）")
