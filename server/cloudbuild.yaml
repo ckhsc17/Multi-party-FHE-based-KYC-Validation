@@ -3,7 +3,7 @@ options:
 
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/multi-party-fhe/fhe-server', '.']
+    args: ['build', '-t', 'gcr.io/multi-party-fhe/fhe-server', './server']
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/multi-party-fhe/fhe-server']
